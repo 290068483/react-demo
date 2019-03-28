@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+      <button id="main_button">点击</button>
+    <script type="text/javascript">
+      (function() {
+        "use strict";
+        var capify = function(str) {
+          return [str.charAt(0).toUpperCase(), str.substring(1)].join("");
+        };
+        var processWords = function(fn, str) {
+            debugger
+          return str
+            .split(" ")
+            .map(fn)//capify(str)
+            .join(" ");
+        };
+        document
+          .getElementById("main_button")
+          .addEventListener("click", function(e) {
+            var something = prompt("Give me something to capitalize");
+            alert(processWords(capify, something));
+          });
+      })();
+    </script>
+  </body>
+</html>
